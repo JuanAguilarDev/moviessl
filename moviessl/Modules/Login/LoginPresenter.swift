@@ -20,20 +20,15 @@ class LoginPresenter {
 
 extension LoginPresenter: LoginPresenterProtocol {
     // TODO: implement presentation methods
-    func viewDidLoad() {
-        
+    
+    func goToSignUpView(){
+        // router?.goToSignupView(fromView: view)
     }
     
-    func viewWillAppear() {
-        
-    }
-    
-    func viewDidAppear() {
-        
-    }
-    
-    func viewWillDissappear() {
-        
+    func showBlanksError() {
+        let title = "Wait"
+        let message = Utils.shared.fillBlanks
+        view?.showAlert(title: title, message: message)
     }
 }
 

@@ -1,0 +1,43 @@
+//
+//  SignupRouter.swift
+//  moviessl
+//
+//  Created by Juan Aguilar on 05/07/24.
+//  
+//
+
+import Foundation
+import UIKit
+
+class SignupRouter {
+
+    // MARK: Properties
+
+
+    // MARK: Static methods
+
+    static func createSignupModule() -> SignupViewController {
+        let view = SignupViewController(nibName: "SignupViewController", bundle: nil)
+        
+        let presenter: SignupPresenterProtocol & SignupInteractorOutputProtocol = SignupPresenter()
+        
+        let interactor: SignupInteractorInputProtocol = SignupInteractor()
+        
+        let router: SignupRouterProtocol = SignupRouter()
+        
+        let provider: MoviesServicesManagerProtocol = MoviesServicesManager()
+
+        view.presenter = presenter
+        presenter.view = view
+        presenter.interactor = interactor
+        presenter.router = router
+        interactor.presenter = presenter
+        interactor.provider = provider
+        
+        return view
+    }
+}
+
+extension SignupRouter: SignupRouterProtocol {
+    // TODO: Implement wireframe methods
+}

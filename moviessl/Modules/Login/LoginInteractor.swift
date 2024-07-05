@@ -13,7 +13,7 @@ class LoginInteractor {
     // MARK: Properties
 
     weak var presenter: LoginInteractorOutputProtocol?
-    var provider: WebServicesManagerCredit2Protocol?
+    var provider: MoviesServicesManagerProtocol?
 
 }
 

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class LoginViewController: BaseCredit2NoTabViewController {
+class LoginViewController: BaseViewController {
 
     // MARK: Properties
     var presenter: LoginPresenterProtocol?
@@ -19,6 +19,7 @@ class LoginViewController: BaseCredit2NoTabViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.viewDidLoad()
+        initView() // STORYBOARD
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -30,4 +31,7 @@ class LoginViewController: BaseCredit2NoTabViewController {
 
 extension LoginViewController : LoginViewProtocol{
     // TODO: implement view output methods
+    func initView() {
+        self.title = "Welcome Back!"
+    }
 }

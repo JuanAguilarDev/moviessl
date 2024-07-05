@@ -25,7 +25,7 @@ class LoginRouter {
         
         let router: LoginRouterProtocol = LoginRouter()
         
-        let provider: WebServicesManagerCredit2Protocol = Credit2Manager.shared.isMock() ? WebServicesManagerCredit2Mock() : WebServicesManagerCredit2()
+        let provider: MoviesServicesManagerProtocol = MoviesServicesManager()
 
         view.presenter = presenter
         presenter.view = view

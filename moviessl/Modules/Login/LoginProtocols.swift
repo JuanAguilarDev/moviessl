@@ -14,25 +14,28 @@ protocol LoginViewProtocol: BaseViewController {
     var presenter: LoginPresenterProtocol? { get set }
 }
 
-protocol LoginRouterProtocol: Any  {
+protocol LoginRouterProtocol: AnyObject {
     // PRESENTER -> ROUTER
     
     static func createLoginModule() -> LoginViewController
 }
 
-protocol LoginPresenterProtocol: Any  {
+protocol LoginPresenterProtocol: AnyObject {
     // VIEW -> PRESENTER
     
     var view: LoginViewProtocol? { get set }
     var interactor: LoginInteractorInputProtocol? { get set }
     var router: LoginRouterProtocol? { get set }
+    
+    func viewDidLoad()
+    func viewWillAppear()
 }
 
-protocol LoginInteractorOutputProtocol: Any {
+protocol LoginInteractorOutputProtocol: AnyObject {
     //INTERACTOR -> PRESENTER
 }
 
-protocol LoginInteractorInputProtocol: Any {
+protocol LoginInteractorInputProtocol: AnyObject {
     //PRESENTER -> INTERACTOR
     
     var presenter: LoginInteractorOutputProtocol? { get set }

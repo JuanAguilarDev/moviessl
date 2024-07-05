@@ -72,4 +72,8 @@ class BaseViewController: UIViewController {
 
         present(alertController, animated: true, completion: nil)
     }
+    
+    func setNavigationControllerHidden(isHidden: Bool) {
+        navigationController?.setNavigationBarHidden(isHidden, animated: isHidden)
+    }
 }

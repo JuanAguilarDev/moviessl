@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 import ObjectMapper
 
-class TodoServicesManager : MoviesServicesManagerProtocol {
+class MoviesServicesManager : MoviesServicesManagerProtocol {
     // MARK: Implementation of functions
     
     let concurrentQueve = DispatchQueue(label: "services", attributes: .concurrent)

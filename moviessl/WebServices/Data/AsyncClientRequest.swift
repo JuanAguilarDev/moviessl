@@ -19,7 +19,6 @@ class AsyncClientRequest {
     var params: Parameters = [:]
     var encoding: ParameterEncoding = URLEncoding.default
     var baseURL: String = "https://todo-app-bmna.onrender.com/api/"
-    // var baseURL: String = "http://localhost:8080/api/"
     
     func callServiceInternal<T: Mappable>(requestModel: AsyncClientMoviesRequestModel, completion: @escaping (Result<T, Error>?) -> Void) {
         

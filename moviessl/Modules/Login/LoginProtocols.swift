@@ -8,19 +8,19 @@
 
 import Foundation
 
-protocol LoginViewProtocol: BaseViewProtocol {
+protocol LoginViewProtocol: BaseViewController {
     // PRESENTER -> VIEW
     
     var presenter: LoginPresenterProtocol? { get set }
 }
 
-protocol LoginRouterProtocol: BaseRouterProtocol  {
+protocol LoginRouterProtocol: Any  {
     // PRESENTER -> ROUTER
     
     static func createLoginModule() -> LoginViewController
 }
 
-protocol LoginPresenterProtocol: BasePresenterProtocol  {
+protocol LoginPresenterProtocol: Any  {
     // VIEW -> PRESENTER
     
     var view: LoginViewProtocol? { get set }
@@ -28,14 +28,14 @@ protocol LoginPresenterProtocol: BasePresenterProtocol  {
     var router: LoginRouterProtocol? { get set }
 }
 
-protocol LoginInteractorOutputProtocol: BaseInteractorOutputProtocol {
+protocol LoginInteractorOutputProtocol: Any {
     //INTERACTOR -> PRESENTER
 }
 
-protocol LoginInteractorInputProtocol: BaseInteractorInputProtocol {
+protocol LoginInteractorInputProtocol: Any {
     //PRESENTER -> INTERACTOR
     
     var presenter: LoginInteractorOutputProtocol? { get set }
-    var provider: WebServicesManagerCredit2Protocol? { get set }
+    var provider: MoviesServicesManagerProtocol? { get set }
 
 }

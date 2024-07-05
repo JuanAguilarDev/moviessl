@@ -14,6 +14,17 @@
 		706B456C2C37BE8D00896E58 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 706B456B2C37BE8D00896E58 /* Base */; };
 		706B456E2C37BE8E00896E58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 706B456D2C37BE8E00896E58 /* Assets.xcassets */; };
 		706B45712C37BE8E00896E58 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 706B45702C37BE8E00896E58 /* Base */; };
+		706B457D2C37C2B000896E58 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706B457C2C37C2B000896E58 /* Extensions.swift */; };
+		706B45852C37C39B00896E58 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706B457F2C37C39B00896E58 /* LoginPresenter.swift */; };
+		706B45862C37C39B00896E58 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706B45802C37C39B00896E58 /* LoginRouter.swift */; };
+		706B45872C37C39B00896E58 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706B45812C37C39B00896E58 /* LoginViewController.swift */; };
+		706B45882C37C39B00896E58 /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706B45822C37C39B00896E58 /* LoginProtocols.swift */; };
+		706B45892C37C39B00896E58 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706B45832C37C39B00896E58 /* LoginInteractor.swift */; };
+		706B458D2C37C4B900896E58 /* MoviesServicesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706B458C2C37C4B900896E58 /* MoviesServicesManager.swift */; };
+		706B458F2C37C4C400896E58 /* MoviesServicesManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706B458E2C37C4C400896E58 /* MoviesServicesManagerProtocol.swift */; };
+		706B45912C37C50600896E58 /* AsyncClientRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706B45902C37C50600896E58 /* AsyncClientRequest.swift */; };
+		706B45962C37C58C00896E58 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706B45952C37C58C00896E58 /* Utils.swift */; };
+		706B45982C37C73A00896E58 /* AsyncClientMoviesRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706B45972C37C73A00896E58 /* AsyncClientMoviesRequestModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,10 +33,21 @@
 		706B45642C37BE8D00896E58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		706B45662C37BE8D00896E58 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		706B45682C37BE8D00896E58 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		706B456B2C37BE8D00896E58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		706B456B2C37BE8D00896E58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LoginViewController.storyboard; sourceTree = "<group>"; };
 		706B456D2C37BE8E00896E58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		706B45702C37BE8E00896E58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		706B45722C37BE8E00896E58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		706B457C2C37C2B000896E58 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		706B457F2C37C39B00896E58 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		706B45802C37C39B00896E58 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
+		706B45812C37C39B00896E58 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		706B45822C37C39B00896E58 /* LoginProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocols.swift; sourceTree = "<group>"; };
+		706B45832C37C39B00896E58 /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
+		706B458C2C37C4B900896E58 /* MoviesServicesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesServicesManager.swift; sourceTree = "<group>"; };
+		706B458E2C37C4C400896E58 /* MoviesServicesManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesServicesManagerProtocol.swift; sourceTree = "<group>"; };
+		706B45902C37C50600896E58 /* AsyncClientRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncClientRequest.swift; sourceTree = "<group>"; };
+		706B45952C37C58C00896E58 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		706B45972C37C73A00896E58 /* AsyncClientMoviesRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncClientMoviesRequestModel.swift; sourceTree = "<group>"; };
 		D96F318D5AC1C3BD69CDE320 /* Pods_moviessl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_moviessl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD754F70884FADE3D5C7FDE7 /* Pods-moviessl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-moviessl.release.xcconfig"; path = "Target Support Files/Pods-moviessl/Pods-moviessl.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -75,12 +97,63 @@
 				706B45642C37BE8D00896E58 /* AppDelegate.swift */,
 				706B45662C37BE8D00896E58 /* SceneDelegate.swift */,
 				706B45682C37BE8D00896E58 /* ViewController.swift */,
-				706B456A2C37BE8D00896E58 /* Main.storyboard */,
+				706B45792C37C29000896E58 /* Utils */,
+				706B457A2C37C29800896E58 /* Modules */,
+				706B457B2C37C2A000896E58 /* WebServices */,
 				706B456D2C37BE8E00896E58 /* Assets.xcassets */,
 				706B456F2C37BE8E00896E58 /* LaunchScreen.storyboard */,
 				706B45722C37BE8E00896E58 /* Info.plist */,
 			);
 			path = moviessl;
+			sourceTree = "<group>";
+		};
+		706B45792C37C29000896E58 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				706B457C2C37C2B000896E58 /* Extensions.swift */,
+				706B45952C37C58C00896E58 /* Utils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		706B457A2C37C29800896E58 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				706B457E2C37C38E00896E58 /* Login */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		706B457B2C37C2A000896E58 /* WebServices */ = {
+			isa = PBXGroup;
+			children = (
+				706B458B2C37C4A000896E58 /* Data */,
+				706B458C2C37C4B900896E58 /* MoviesServicesManager.swift */,
+				706B458E2C37C4C400896E58 /* MoviesServicesManagerProtocol.swift */,
+			);
+			path = WebServices;
+			sourceTree = "<group>";
+		};
+		706B457E2C37C38E00896E58 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				706B457F2C37C39B00896E58 /* LoginPresenter.swift */,
+				706B45802C37C39B00896E58 /* LoginRouter.swift */,
+				706B45812C37C39B00896E58 /* LoginViewController.swift */,
+				706B45822C37C39B00896E58 /* LoginProtocols.swift */,
+				706B45832C37C39B00896E58 /* LoginInteractor.swift */,
+				706B456A2C37BE8D00896E58 /* LoginViewController.storyboard */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		706B458B2C37C4A000896E58 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				706B45902C37C50600896E58 /* AsyncClientRequest.swift */,
+				706B45972C37C73A00896E58 /* AsyncClientMoviesRequestModel.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		9FB0C25B666540DBA1CA082A /* Frameworks */ = {
@@ -206,21 +279,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				706B45982C37C73A00896E58 /* AsyncClientMoviesRequestModel.swift in Sources */,
 				706B45692C37BE8D00896E58 /* ViewController.swift in Sources */,
+				706B45912C37C50600896E58 /* AsyncClientRequest.swift in Sources */,
+				706B45962C37C58C00896E58 /* Utils.swift in Sources */,
 				706B45652C37BE8D00896E58 /* AppDelegate.swift in Sources */,
 				706B45672C37BE8D00896E58 /* SceneDelegate.swift in Sources */,
+				706B45852C37C39B00896E58 /* LoginPresenter.swift in Sources */,
+				706B458F2C37C4C400896E58 /* MoviesServicesManagerProtocol.swift in Sources */,
+				706B45862C37C39B00896E58 /* LoginRouter.swift in Sources */,
+				706B45872C37C39B00896E58 /* LoginViewController.swift in Sources */,
+				706B45882C37C39B00896E58 /* LoginProtocols.swift in Sources */,
+				706B45892C37C39B00896E58 /* LoginInteractor.swift in Sources */,
+				706B458D2C37C4B900896E58 /* MoviesServicesManager.swift in Sources */,
+				706B457D2C37C2B000896E58 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		706B456A2C37BE8D00896E58 /* Main.storyboard */ = {
+		706B456A2C37BE8D00896E58 /* LoginViewController.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				706B456B2C37BE8D00896E58 /* Base */,
 			);
-			name = Main.storyboard;
+			name = LoginViewController.storyboard;
 			sourceTree = "<group>";
 		};
 		706B456F2C37BE8E00896E58 /* LaunchScreen.storyboard */ = {
@@ -366,7 +450,7 @@
 				INFOPLIST_FILE = moviessl/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = LoginViewController;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -395,7 +479,7 @@
 				INFOPLIST_FILE = moviessl/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = LoginViewController;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (

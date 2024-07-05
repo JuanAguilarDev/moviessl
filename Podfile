@@ -10,6 +10,8 @@ target 'moviessl' do
   pod 'IQKeyboardManagerSwift'
   pod 'Alamofire', '~> 5.0'
   pod 'ObjectMapper', '~> 4.2'
+  pod 'KVNProgress'
+  pod 'MaterialComponents'
 
 end
 

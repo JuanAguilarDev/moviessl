@@ -1,0 +1,33 @@
+Prueba técnica
+
+¿Por qué elegí esta arquitectura?
+
+Elegí la arquitectura VIPER para el proyecto porque promueve una clara separación de responsabilidades dentro del código, lo que facilita su mantenimiento y escalabilidad. VIPER divide la lógica de la aplicación en cinco componentes (View, Interactor, Presenter, Entity, Router), lo que mejora la modularidad, facilita las pruebas unitarias y permite un desarrollo más organizado y manejable. Además de que es una arquitectura con la cual me siento cómodo.
+
+Lista de librerías utilizadas:
+
+- IQKeyboardManagerSwift: Esta librería está enfocada sobre todo a los dispositivos físicos, como incluidos algunos inputs, esta librería nos permite ocultar el Keyboard del dispositivo móvil cuando estás situado en un textfield.
+- Alamofire: Utilice esta librería porque me siento cómodo utilizándola y además me permite crear un manejador de servicios el cual puede ser reutilizable para cualquier tipo de servicios y me permite optimizar la manera en la que suelo consumir los servicios, además de ahorrarme tiempo de escribir cada servicio con su respectiva implementación.
+- ObjectMapper: me permite aplicar el protocolo mappable el cual hace que mis modelos sean capaces de mapear objetos json de una manera más sencilla y fácil de implementar.
+- MaterialComponents: Esta librería solo fue agregada para ahorrar tiempo en funcionalidades de diseño para algunos componentes, principalmente los textfields
+- SQLite.swift: Esta librería la utilicé para crear la persistencia de datos, creando una bd que me permita almacenar los shows que un usuario agrego a favoritos.
+- FMDB: Esta biblioteca la utilicé para facilitar la interacción con la base de datos de SQLite, permite una manera más amigable y. orientada a objetos de trabajar con SQLite.
+
+¿Qué partes de tu código pueden ser mejoradas si tuvieras más tiempo?
+
+Es una pregunta en la que puedo ahondar mucho, debido a que por el tiempo algunas de las partes del código pudieron haber sido mucho más limpias, me gustaría tratar de factorizar el código de tal manera que pueda asegurarme que cada uno de los componentes, clases y etc. trabajan de manera única con respecto a su responsabilidad, además de asegurarme que estos componentes y funciones son aptos para el testing con pruebas unitarias. Además, creo que podría encontrar soluciones más óptimas a algunos de los temas que se me presentaron durante el desarrollo.
+
+¿Cuáles fueron los mayores problemas que encontraste en el desarrollo de la práctica y como los resolviste?
+
+Probablemente, fueron algunos errores que tenía en la implementación de mi código, debido a que algunos valores no se actualizaban de la manera en la que quería, tuve que pasar un par de horas realizando el debug con bastantes. breakpoints para entender el flujo de los datos y el porqué los valores no están actualizándose de manera debida, al final siempre creo que hacer un debug del flujo es la mejor opción para encontrar este tipo de errores donde todo parece estar “bien”, pero el resultado no es el esperado.
+
+Puntos solicitados no concluidos:
+Por cuestión de tiempo no pude concluir el apartado de pruebas unitarias, pero una estrategia que utilizaría para llevar a cabo este punto sería:
+
+- Configurar el entorno de prueba: es decir: asegurarme de que el proyecto tenga configurado un esquema de pruebas y que los frameworks necesarios para pruebas unitarias, como XCTest, estén correctamente integrados.
+- Escribir pruebas para cada componente VIPER: una ventaja de usar viper, aunque quizá un poco más tedioso es que se puede probar la funcionalidad de cada componente, por lo que se realizarían las pruebas unitarias por cada uno de estos: View, Interactor, Presenter, Entity y Router.
+- Escribir la mayor cantidad de casos posibles con respecto a pruebas de éxito y de fallo, asegurándome que tengo abarcado la mayor cantidad posible de estos.
+- También refactorizar el código que no sea testeable, porque puede suceder el caso para algunas implementaciones en las que utilizo extensiones propias.
+- Documentar los casos de prueba y los resultados esperados para facilitar la comprensión y el mantenimiento del código de pruebas.
+
+Creo que implementando estos pasos podría asegurarme de que la aplicación Swift basada en VIPER sea robusta, mantenible y fácil de probar.

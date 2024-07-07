@@ -12,12 +12,16 @@ protocol SignupViewProtocol: BaseViewController {
     // PRESENTER -> VIEW
     
     var presenter: SignupPresenterProtocol? { get set }
+    
+    func initView()
 }
 
 protocol SignupRouterProtocol: AnyObject  {
     // PRESENTER -> ROUTER
     
     static func createSignupModule() -> SignupViewController
+    
+    func goToHomeView(fromView: BaseViewController?)
 }
 
 protocol SignupPresenterProtocol: AnyObject  {
@@ -29,6 +33,8 @@ protocol SignupPresenterProtocol: AnyObject  {
     
     func viewDidLoad()
     func viewWillAppear()
+    func signUpUser(name: String?, username: String?, password: String?)
+    func showBlanksError()
 }
 
 protocol SignupInteractorOutputProtocol: AnyObject {
@@ -40,5 +46,6 @@ protocol SignupInteractorInputProtocol: AnyObject {
     
     var presenter: SignupInteractorOutputProtocol? { get set }
     var provider: MoviesServicesManagerProtocol? { get set }
-
+    
+    func signUpUser(name: String, username: String, password: String)
 }

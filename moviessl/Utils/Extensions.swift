@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Alamofire
 
 extension UIColor {
     convenience init(hex: String, alpha: CGFloat = 1.0) {
@@ -24,3 +25,5 @@ extension UIColor {
         self.init(red: red, green: green, blue: blue, alpha: alpha)
     }
 }
+
+

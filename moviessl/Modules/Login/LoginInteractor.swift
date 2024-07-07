@@ -19,4 +19,7 @@ class LoginInteractor {
 
 extension LoginInteractor: LoginInteractorInputProtocol {
     // TODO: Implement use case methods
+    func authUser(username: String, password: String) {
+        
+    }
 }

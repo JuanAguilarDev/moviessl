@@ -20,9 +20,7 @@ struct AsyncClientMoviesRequestModel {
     enum Service {
         case AUTH_USER
         case SIGN_UP
-        case CREATE_TASK
-        case UPDATE_TASK
-        case DELETE_TASK
+        case GET_SHOWS
         
         func getPath() -> String {
             switch self {
@@ -30,14 +28,8 @@ struct AsyncClientMoviesRequestModel {
                 return "auth"
             case .SIGN_UP:
                 return "auth/signup"
-            case .CREATE_TASK:
-                return "task"
-            case .UPDATE_TASK:
-                return "task/:key1"
-            case .DELETE_TASK:
-                return "task/:key1"
-            //case .GET_SESSION_ID:
-              //  return "authentication/session/new?api_key=:key1"
+            case .GET_SHOWS:
+                return "shows"
             }
         }
     }

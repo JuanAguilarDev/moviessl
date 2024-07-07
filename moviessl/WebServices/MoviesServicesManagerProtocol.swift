@@ -10,4 +10,5 @@ import Foundation
 
 protocol MoviesServicesManagerProtocol : AnyObject {
     
+    func getShows(_ completion: @escaping ([Show]) -> Void)
 }

@@ -19,4 +19,8 @@ class SignupInteractor {
 
 extension SignupInteractor: SignupInteractorInputProtocol {
     // TODO: Implement use case methods
+    func signUpUser(name: String, username: String, password: String) {
+        
+    }
+    
 }

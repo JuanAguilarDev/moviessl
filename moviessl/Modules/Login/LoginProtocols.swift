@@ -12,12 +12,17 @@ protocol LoginViewProtocol: BaseViewController {
     // PRESENTER -> VIEW
     
     var presenter: LoginPresenterProtocol? { get set }
+    
+    func initView()
 }
 
 protocol LoginRouterProtocol: AnyObject {
     // PRESENTER -> ROUTER
     
     static func createLoginModule() -> LoginViewController
+    
+    func goToSignupView(fromView: BaseViewController?)
+    func goToHomeView(fromView: BaseViewController?)
 }
 
 protocol LoginPresenterProtocol: AnyObject {
@@ -26,6 +31,10 @@ protocol LoginPresenterProtocol: AnyObject {
     var view: LoginViewProtocol? { get set }
     var interactor: LoginInteractorInputProtocol? { get set }
     var router: LoginRouterProtocol? { get set }
+    
+    func authUser(username: String, password: String)
+    func goToSignUpView()
+    func showBlanksError()
 }
 
 protocol LoginInteractorOutputProtocol: AnyObject {
@@ -37,5 +46,7 @@ protocol LoginInteractorInputProtocol: AnyObject {
     
     var presenter: LoginInteractorOutputProtocol? { get set }
     var provider: MoviesServicesManagerProtocol? { get set }
+    
+    func authUser(username: String, password: String)
 
 }

@@ -12,9 +12,10 @@ import MaterialComponents
 class Utils {
     
     static let shared = Utils()
-
+    var model: LoginModel?
+    
     // Colors
-    let mainColor = "CB1E47"
+    let mainColor = "7A3FFE"
     let onGoingColor = "FEC347"
     let toDoColor = "53C2C5"
     let completedColor = "4A934A"
@@ -24,6 +25,11 @@ class Utils {
     let loginError: String = "Ooops, it seems that the user or password does not match."
     let signUpError: String = "Ooops, we are having problems, try again later."
     let fillBlanks: String = "Ooops, all fields should be filled in."
+    let connectionError: String = "Ocurrió un error al consultar el servicio. ¿Quieres intentar nuevamente?"
+    
+    func newUser(model: LoginModel) {
+        self.model = model
+    }
     
 }
 
@@ -83,14 +89,30 @@ class BaseViewController: UIViewController {
     
     func showAlert(title: String, message: String) {
         let alertController = MDCAlertController(title: title, message: message)
-
+        
         let action = MDCAlertAction(title: "OK") { (action) in }
         alertController.addAction(action)
-
+        
         present(alertController, animated: true, completion: nil)
     }
     
     func setNavigationControllerHidden(isHidden: Bool) {
         navigationController?.setNavigationBarHidden(isHidden, animated: isHidden)
+    }
+    
+    func setupBackgroundView() {
+        let backgroundView = UIView()
+        backgroundView.translatesAutoresizingMaskIntoConstraints = false
+        backgroundView.backgroundColor = UIColor(hex: Utils.shared.mainColor)
+        
+        view.addSubview(backgroundView)
+        view.sendSubviewToBack(backgroundView)
+        
+        NSLayoutConstraint.activate([
+            backgroundView.topAnchor.constraint(equalTo: view.topAnchor),
+            backgroundView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            backgroundView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            backgroundView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
     }
 }

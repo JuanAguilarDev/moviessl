@@ -22,7 +22,26 @@ extension LoginPresenter: LoginPresenterProtocol {
     // TODO: implement presentation methods
     
     func goToSignUpView(){
-        // router?.goToSignupView(fromView: view)
+        router?.goToSignupView(fromView: view)
+    }
+    
+    func authUser(username: String, password: String) {
+        view?.showLoader()
+        router?.goToHomeView(fromView: view)
+        //interactor?.authUser(username: username, password: password)
+    }
+    
+    func goToHomeView(model: LoginModel?) {
+        view?.hideLoader()
+        
+        if let model = model, let router = router {
+            Utils.shared.newUser(model: model)
+            router.goToHomeView(fromView: view)
+        } else {
+            let title = "Take a look!"
+            let message = Utils.shared.loginError
+            view?.showAlert(title: title, message: message)
+        }
     }
     
     func showBlanksError() {
@@ -30,6 +49,7 @@ extension LoginPresenter: LoginPresenterProtocol {
         let message = Utils.shared.fillBlanks
         view?.showAlert(title: title, message: message)
     }
+    
 }
 
 extension LoginPresenter: LoginInteractorOutputProtocol {

@@ -40,4 +40,18 @@ class LoginRouter {
 
 extension LoginRouter: LoginRouterProtocol {
     // TODO: Implement wireframe methods
+    
+    func goToSignupView(fromView: BaseViewController?) {
+        if let view = fromView {
+            let signUpView = SignupRouter.createSignupModule()
+            view.navigationController?.pushViewController(signUpView, animated: true)
+        }
+    }
+    
+    func goToHomeView(fromView: BaseViewController?) {
+        if let view = fromView {
+            let homeView = HomeRouter.createHomeModule()
+            view.navigationController?.pushViewController(homeView, animated: true)
+        }
+    }
 }

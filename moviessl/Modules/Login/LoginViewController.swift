@@ -31,6 +31,21 @@ class LoginViewController: BaseViewController {
         initateStoryBoard() // STORYBOARD
     }
     
+    
+    @IBAction func loginAction(_ sender: Any) {
+        guard let presenter = presenter else { return }
+        if let usernameText = username.text, let passwordText = password.text, !passwordText.isEmpty, !usernameText.isEmpty {
+            presenter.authUser(username: usernameText, password: passwordText)
+        } else {
+            presenter.showBlanksError()
+        }
+    }
+    
+    
+    @IBAction func signUpAction(_ sender: Any) {
+        presenter?.goToSignUpView()
+    }
+    
     // MARK: Custom code
     func createIcon(_ iconName: String) -> UIImageView {
         let leadingIcon = UIImageView(image: UIImage(systemName: iconName))
@@ -76,6 +91,7 @@ extension LoginViewController : LoginViewProtocol{
             password.isSecureTextEntry = true
             loginButton.layer.cornerRadius = 5
             signUpButton.layer.cornerRadius = 5
+            signUpButton.setBackgroundColor(UIColor(hex: Utils.shared.mainColor))
     }
     
 }

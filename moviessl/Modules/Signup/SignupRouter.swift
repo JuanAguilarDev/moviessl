@@ -40,4 +40,11 @@ class SignupRouter {
 
 extension SignupRouter: SignupRouterProtocol {
     // TODO: Implement wireframe methods
+    
+    func goToHomeView(fromView: BaseViewController?) {
+        if let view = fromView {
+            //let homeView = HomeRouter.createHomeModule()
+            //view.navigationController?.pushViewController(homeView, animated: true)
+        }
+    }
 }

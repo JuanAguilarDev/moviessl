@@ -15,6 +15,7 @@ target 'moviessl' do
   pod 'KVNProgress'
   pod 'MaterialComponents'
   pod 'SQLite.swift', '~> 0.12.0'
+  pod 'FMDB'
 
 end
 

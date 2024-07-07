@@ -19,11 +19,11 @@ class AsyncClientRequest {
     var params: Parameters = [:]
     var encoding: ParameterEncoding = URLEncoding.default
     var baseURL: String = "https://api.tvmaze.com/"
-    //var baseURL: String = "https://todo-app-bmna.onrender.com/api/"
+    var baseLoginURL: String = "https://todo-app-bmna.onrender.com/api/"
     
     func callServiceInternal<T: Mappable>(requestModel: AsyncClientMoviesRequestModel, completion: @escaping (Result<T, Error>?) -> Void) {
         
-        var url = self.getUrl(requestModel: requestModel)
+        var url = self.getLoginUrl(requestModel: requestModel) 
         let method = requestModel.httpMethod.getMethod()
         let headers = requestModel.headers
         
@@ -110,8 +110,13 @@ class AsyncClientRequest {
 
     }
     
+    
     func getUrl(requestModel: AsyncClientMoviesRequestModel) -> String {
         return ("\(baseURL)\(requestModel.service.getPath())")
+    }
+    
+    func getLoginUrl(requestModel: AsyncClientMoviesRequestModel) -> String {
+        return ("\(baseLoginURL)\(requestModel.service.getPath())")
     }
     
 }

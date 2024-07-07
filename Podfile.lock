@@ -1,5 +1,8 @@
 PODS:
   - Alamofire (5.9.1)
+  - FMDB (2.7.10):
+    - FMDB/standard (= 2.7.10)
+  - FMDB/standard (2.7.10)
   - IQKeyboardManagerSwift (7.0.2)
   - KVNProgress (2.3.5)
   - MaterialComponents (124.2.0):
@@ -654,6 +657,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 5.0)
+  - FMDB
   - IQKeyboardManagerSwift
   - KVNProgress
   - MaterialComponents
@@ -663,6 +667,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
+    - FMDB
     - IQKeyboardManagerSwift
     - KVNProgress
     - MaterialComponents
@@ -675,6 +680,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: f36a35757af4587d8e4f4bfa223ad10be2422b8c
+  FMDB: eae540775bf7d0c87a5af926ae37af69effe5a19
   IQKeyboardManagerSwift: d338c11a896e9f29603443700c4567e32f830c22
   KVNProgress: d7046cce142f1aeb740db39dc3cacfe910fac354
   MaterialComponents: 1a9b2d9d45b1601ae544de85089adc4c464306d4
@@ -685,6 +691,6 @@ SPEC CHECKSUMS:
   ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
   SQLite.swift: d2b4642190917051ce6bd1d49aab565fe794eea3
 
-PODFILE CHECKSUM: 96292a840d210bb3c231df5971d4ebdfb5703370
+PODFILE CHECKSUM: 4c475b4706eacee397297cb31a42eb6d3f8e77ca
 
 COCOAPODS: 1.15.2

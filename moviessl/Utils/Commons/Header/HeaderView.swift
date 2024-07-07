@@ -8,6 +8,10 @@
 import Foundation
 import UIKit
 
+protocol HeaderViewProtocol {
+    func onClickBtn(status: Bool)
+}
+
 class HeaderView: UIView {
     
     // MARK: Properties
@@ -17,7 +21,10 @@ class HeaderView: UIView {
     @IBOutlet weak var favoriteView: UIView!
     @IBOutlet weak var favoriteLabel: UILabel!
     @IBOutlet weak var favoriteImage: UIImageView!
-    
+
+    var delegate: HeaderViewProtocol?
+    var status: Bool = false
+
     static var identifier: String {
         return String(describing: self)
     }
@@ -50,14 +57,23 @@ class HeaderView: UIView {
     }
     
     func setFavoriteView(isFavorite: Bool) {
+        favoriteView.isHidden = false
         if isFavorite {
-            favoriteImage.image = UIImage(named: "star.fill")
+            favoriteImage.image = UIImage(systemName: "star.fill")
             favoriteImage.tintColor = UIColor.yellow
             favoriteLabel.text = "Delete"
+            status = true
         } else {
-            favoriteImage.image = UIImage(named: "star")
+            favoriteImage.image = UIImage(systemName: "star")
+            favoriteImage.tintColor = UIColor.white
             favoriteLabel.text = "Favorite"
+            status = false
         }
     }
     
+    @IBAction func onClickBtn(_ sender: Any) {
+        setFavoriteView(isFavorite: !status)
+        guard let delegate = delegate else { return }
+        delegate.onClickBtn(status: status)
+    }
 }

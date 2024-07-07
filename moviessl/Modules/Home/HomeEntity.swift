@@ -82,7 +82,7 @@ class ShowImage: Mappable {
 
 class ShowModel {
     var id: Int?
-    var userId: String?
+    var elementId: Int?
     var url: String?
     var name: String?
     var type: String?
@@ -95,12 +95,14 @@ class ShowModel {
     var officialSite: String?
     var rating: Int?
     var image: ImageSource?
+    var imageUrl: String?
     var summary: String?
     var isFavorite: Bool?
     var externals: String?
    
-    init(id: Int? = nil, url: String? = nil, name: String? = nil, type: String? = nil, language: String? = nil, genres: [String]? = nil, status: String? = nil, runtime: Int? = nil, premiered: String? = nil, ended: String? = nil, officialSite: String? = nil, rating: Int? = nil, image: ImageSource? = nil, summary: String? = nil, externals: String? = nil) {
+    init(id: Int? = nil, elementId: Int? = nil,url: String? = nil, name: String? = nil, type: String? = nil, language: String? = nil, genres: [String]? = nil, status: String? = nil, runtime: Int? = nil, premiered: String? = nil, ended: String? = nil, officialSite: String? = nil, rating: Int? = nil, image: ImageSource? = nil, summary: String? = nil, externals: String? = nil, imageUrl: String? = nil, isFavorite: Bool? = nil) {
         self.id = id
+        self.elementId = elementId
         self.url = url
         self.name = name
         self.type = type
@@ -113,7 +115,9 @@ class ShowModel {
         self.officialSite = officialSite
         self.rating = rating
         self.image = image
+        self.isFavorite = isFavorite
         self.summary = summary
         self.externals = externals
+        self.imageUrl = imageUrl
     }
 }

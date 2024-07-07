@@ -52,8 +52,6 @@
 		706B45B82C391E4700896E58 /* HomeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706B45B72C391E4700896E58 /* HomeEntity.swift */; };
 		706B45BC2C39C30D00896E58 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706B45BB2C39C30D00896E58 /* HeaderView.swift */; };
 		706B45BE2C39C31500896E58 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 706B45BD2C39C31500896E58 /* HeaderView.xib */; };
-		706B45C72C3A1A1900896E58 /* ShowViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706B45C52C3A1A1900896E58 /* ShowViewCell.swift */; };
-		706B45C82C3A1A1900896E58 /* ShowViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 706B45C62C3A1A1900896E58 /* ShowViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,8 +102,6 @@
 		706B45B72C391E4700896E58 /* HomeEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEntity.swift; sourceTree = "<group>"; };
 		706B45BB2C39C30D00896E58 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		706B45BD2C39C31500896E58 /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
-		706B45C52C3A1A1900896E58 /* ShowViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowViewCell.swift; sourceTree = "<group>"; };
-		706B45C62C3A1A1900896E58 /* ShowViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowViewCell.xib; sourceTree = "<group>"; };
 		D96F318D5AC1C3BD69CDE320 /* Pods_moviessl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_moviessl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD754F70884FADE3D5C7FDE7 /* Pods-moviessl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-moviessl.release.xcconfig"; path = "Target Support Files/Pods-moviessl/Pods-moviessl.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -315,8 +311,6 @@
 		706B45C02C3A195900896E58 /* Show */ = {
 			isa = PBXGroup;
 			children = (
-				706B45C52C3A1A1900896E58 /* ShowViewCell.swift */,
-				706B45C62C3A1A1900896E58 /* ShowViewCell.xib */,
 				7027DAA82C3A368100FBB534 /* ShowTableViewCell.swift */,
 				7027DAA92C3A368100FBB534 /* ShowTableViewCell.xib */,
 			);
@@ -394,7 +388,6 @@
 				706B456E2C37BE8E00896E58 /* Assets.xcassets in Resources */,
 				706B45712C37BE8E00896E58 /* Base in Resources */,
 				7027DAAB2C3A368100FBB534 /* ShowTableViewCell.xib in Resources */,
-				706B45C82C3A1A1900896E58 /* ShowViewCell.xib in Resources */,
 				706B45B62C39167700896E58 /* HomeViewController.xib in Resources */,
 				706B45BE2C39C31500896E58 /* HeaderView.xib in Resources */,
 				706B45A72C38AFA300896E58 /* SignupViewController.xib in Resources */,
@@ -475,7 +468,6 @@
 				706B45B42C39167700896E58 /* HomeProtocols.swift in Sources */,
 				706B45B52C39167700896E58 /* HomeInteractor.swift in Sources */,
 				706B45672C37BE8D00896E58 /* SceneDelegate.swift in Sources */,
-				706B45C72C3A1A1900896E58 /* ShowViewCell.swift in Sources */,
 				7027DAC02C3A658500FBB534 /* WebModal.swift in Sources */,
 				7027DAC32C3A691000FBB534 /* DataManager.swift in Sources */,
 				706B45852C37C39B00896E58 /* LoginPresenter.swift in Sources */,
@@ -566,7 +558,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				INFOPLIST_KEY_UILaunchScreen_Generation = NO;
+				INFOPLIST_KEY_UILaunchStoryboardName = LauncScreen;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -623,7 +617,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				INFOPLIST_KEY_UILaunchScreen_Generation = NO;
+				INFOPLIST_KEY_UILaunchStoryboardName = LauncScreen;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -639,6 +635,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 896897HK45;
@@ -646,7 +643,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = moviessl/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = Laun;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = LoginViewController;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -657,9 +654,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = JuanDev.moviessl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -669,6 +670,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 896897HK45;
@@ -676,7 +678,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = moviessl/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = Laun;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = LoginViewController;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -687,9 +689,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = JuanDev.moviessl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

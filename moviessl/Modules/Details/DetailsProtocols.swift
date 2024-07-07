@@ -13,7 +13,7 @@ protocol DetailsViewProtocol: BaseViewController {
     
     var presenter: DetailsPresenterProtocol? { get set }
     
-    func setHeader(title: String)
+    func setHeader(title: String, model: ShowModel?)
     func initView()
     func fillElements()
 }
@@ -31,9 +31,11 @@ protocol DetailsPresenterProtocol: AnyObject  {
     var interactor: DetailsInteractorInputProtocol? { get set }
     var router: DetailsRouterProtocol? { get set }
     var model: ShowModel? { get set }
+    var status: Bool? { get set }
     
     func viewDidLoad()
     func viewWillAppear()
+    func viewWillDisappear()
 }
 
 protocol DetailsInteractorOutputProtocol: AnyObject {

@@ -21,7 +21,7 @@ class Utils {
     let loginError: String = "Ooops, it seems that the user or password does not match."
     let signUpError: String = "Ooops, we are having problems, try again later."
     let fillBlanks: String = "Ooops, all fields should be filled in."
-    let connectionError: String = "Ocurrió un error al consultar el servicio. ¿Quieres intentar nuevamente?"
+    let connectionError: String = "An error occurred while querying the service, do you want to try again?"
     let confirmation: String = "Are you sure you want to remove this catalog from your favorites?"
     
     // URLs

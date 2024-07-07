@@ -43,8 +43,8 @@ extension SignupRouter: SignupRouterProtocol {
     
     func goToHomeView(fromView: BaseViewController?) {
         if let view = fromView {
-            //let homeView = HomeRouter.createHomeModule()
-            //view.navigationController?.pushViewController(homeView, animated: true)
+            let homeView = HomeRouter.createHomeModule()
+            view.navigationController?.pushViewController(homeView, animated: true)
         }
     }
 }

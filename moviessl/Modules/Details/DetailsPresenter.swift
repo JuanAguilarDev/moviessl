@@ -17,6 +17,7 @@ class DetailsPresenter {
     var router: DetailsRouterProtocol?
     var interactor: DetailsInteractorInputProtocol?
     var model: ShowModel?
+    var status: Bool?
     
     init(model: ShowModel? = nil) {
         self.model = model
@@ -26,7 +27,7 @@ class DetailsPresenter {
 extension DetailsPresenter: DetailsPresenterProtocol {
     // TODO: implement presentation methods
     func viewDidLoad() {
-        view?.setHeader(title: model?.name ?? "Show")
+        view?.setHeader(title: model?.name ?? "Show", model: model)
         view?.setupBackgroundView()
         view?.setNavigationControllerHidden(isHidden: false)
         view?.initView()
@@ -34,6 +35,10 @@ extension DetailsPresenter: DetailsPresenterProtocol {
     }
     
     func viewWillAppear() {
+        
+    }
+    
+    func viewWillDisappear() {
         
     }
 }

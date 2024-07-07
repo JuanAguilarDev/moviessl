@@ -37,6 +37,29 @@ class DetailsViewController: BaseViewController {
         presenter?.viewWillAppear()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        presenter?.viewWillDisappear()
+        if self.isMovingFromParent {
+            if let presenter = presenter, let status = presenter.status {
+                if status {
+                    let element = DatabaseManager.shared.getAllShows().filter { $0.id == presenter.model?.id }
+                    
+                    if let model = presenter.model, element.isEmpty {
+                        model.isFavorite = true
+                        DatabaseManager.shared.insertShow(show: model)
+                    }
+                } else {
+                    let element = DatabaseManager.shared.getAllShows().filter { $0.id == presenter.model?.id }
+                    
+                    if let model = presenter.model, let id = model.id, !element.isEmpty {
+                        DatabaseManager.shared.deleteShow(id: id)
+                    }
+                }
+            }
+        }
+    }
+    
     @IBAction func goToWeb(_ sender: Any) {
         guard let presenter = self.presenter, let model = presenter.model else { return }
         
@@ -47,23 +70,6 @@ class DetailsViewController: BaseViewController {
     }
     
     // MARK: Custom functions
-    func htmlToText(htmlText: String) -> NSMutableAttributedString {
-        
-        let fontSize: CGFloat = 15.0
-        
-        var mutableAttributedString: NSMutableAttributedString = NSMutableAttributedString(string: "")
-        
-        if let attributedString = try? NSAttributedString(data: htmlText.data(using: .utf8)!,
-                                                          options: [.documentType: NSAttributedString.DocumentType.html],
-                                                          documentAttributes: nil) {
-            
-            let mutableAttributedString = NSMutableAttributedString(attributedString: attributedString)
-            mutableAttributedString.addAttribute(.font, value: UIFont.systemFont(ofSize: fontSize), range: NSRange(location: 0, length: mutableAttributedString.length))
-            
-        }
-        
-        return mutableAttributedString
-    }
     
 }
 
@@ -71,9 +77,18 @@ class DetailsViewController: BaseViewController {
 extension DetailsViewController : DetailsViewProtocol{
     // TODO: implement view output methods
     
-    func setHeader(title: String) {
+    func setHeader(title: String, model: ShowModel?) {
         let header = HeaderView()
+        header.delegate = self
         header.setTitle(title: title)
+        
+        let element = DatabaseManager.shared.getAllShows().filter { $0.id == model?.id }
+        
+        if !element.isEmpty {
+            header.setFavoriteView(isFavorite: element[0].isFavorite ?? true)
+        } else {
+            header.setFavoriteView(isFavorite: false)
+        }
         
         mainStack.insertArrangedSubview(header, at: 0)
         mainStack.layoutIfNeeded()
@@ -105,11 +120,18 @@ extension DetailsViewController : DetailsViewProtocol{
             summaryLabel.attributedText = attributedString
         }
         
-        if let externals = model.externals {
+        if let _ = model.externals {
             goToView.isHidden = false
         } else {
             goToView.isHidden = true
         }
         
+    }
+}
+
+
+extension DetailsViewController: HeaderViewProtocol {
+    func onClickBtn(status: Bool) {
+        presenter?.status = status
     }
 }

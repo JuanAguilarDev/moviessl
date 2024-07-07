@@ -16,6 +16,7 @@ protocol HomeViewProtocol: BaseViewController {
     func setHeader()
     func registerCells()
     func initView()
+    func reloadTable()
 }
 
 protocol HomeRouterProtocol: AnyObject  {
@@ -37,10 +38,11 @@ protocol HomePresenterProtocol: AnyObject  {
     
     func viewDidLoad()
     func viewWillAppear()
-    func updateFavorite(position: Int?, value: Bool?)
-    func addFavorite(favorite: ShowModel?)
-    func removeFavorite(id: Int?)
+    func addFavorite(favorite: ShowModel?, id: Int?)
+    func removeFavorite(id: Int?, position: Int?)
     func goToDetailView(show: ShowModel?)
+    func updateFavorite()
+    func updateShows()
 }
 
 protocol HomeInteractorOutputProtocol: AnyObject {

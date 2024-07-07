@@ -20,7 +20,14 @@ class SignupInteractor {
 extension SignupInteractor: SignupInteractorInputProtocol {
     // TODO: Implement use case methods
     func signUpUser(name: String, username: String, password: String) {
-        
+        provider?.signUpUser(username: username, password: password, name: name, { [weak self] data in
+            if let user = data.user, let self = self  {
+                let model = LoginModel(user: UserModel(id: user.id, name: user.name, username: user.username), token: data.token, message: data.message)
+                self.presenter?.goToHomeView(model: model)
+            } else if let self = self {
+                self.presenter?.goToHomeView(model: nil)
+            }
+        })
     }
     
 }

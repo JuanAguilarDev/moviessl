@@ -16,17 +16,14 @@ class WebModal: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Configurar WKWebView
         webView = WKWebView(frame: self.view.frame)
         self.view.addSubview(webView)
         
-        // Cargar URL
         if let url = URL(string: urlString) {
             let request = URLRequest(url: url)
             webView.load(request)
         }
         
-        // Agregar botón de cerrar
         let closeButton = UIButton(frame: CGRect(x: 20, y: 40, width: 100, height: 50))
         closeButton.setTitle("Close", for: .normal)
         closeButton.setTitleColor(.white, for: .normal)

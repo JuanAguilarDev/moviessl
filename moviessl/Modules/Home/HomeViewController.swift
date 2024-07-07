@@ -49,6 +49,7 @@ class HomeViewController: BaseViewController {
     
     
     @IBAction func onTvSectionAction(_ sender: Any) {
+        presenter?.updateShows()
         setActiveStatusSection(label: tvLabelSection, image: tvImageSection, isActive: true)
         setActiveStatusSection(label: favoritesLabelSection, image: favoritesImageSection, isActive: false)
         isFavoriteActive = false
@@ -56,6 +57,7 @@ class HomeViewController: BaseViewController {
     }
     
     @IBAction func onFavoritesSectionAction(_ sender: Any) {
+        presenter?.updateFavorite()
         setActiveStatusSection(label: tvLabelSection, image: tvImageSection, isActive: false)
         setActiveStatusSection(label: favoritesLabelSection, image: favoritesImageSection, isActive: true)
         isFavoriteActive = true
@@ -67,6 +69,10 @@ class HomeViewController: BaseViewController {
 
 extension HomeViewController : HomeViewProtocol{
     // TODO: implement view output methods
+    
+    func reloadTable() {
+        tableView.reloadData()
+    }
     
     func setHeader() {
         let header = HeaderView()
@@ -102,14 +108,19 @@ extension HomeViewController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let nameCell = "ShowTableViewCell"
-        let shows = isFavoriteActive ? presenter?.favoriteShows : presenter?.shows
+        var shows = isFavoriteActive ? presenter?.favoriteShows : presenter?.shows
         let position = indexPath.row
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: nameCell, for: indexPath) as? ShowTableViewCell else {
             fatalError("can't dequeue CustomCell")
         }
         
-        cell.initView(title: shows?[position].name, image: shows?[position].image)
+        if let shows = shows, shows.count > position {
+            cell.initView(title: shows[position].name, image: shows[position].image)
+        } else {
+            cell.initView(title: nil, image: nil)
+        }
+        
         return cell
     }
     
@@ -125,8 +136,7 @@ extension HomeViewController : UITableViewDataSource {
                 
                 
                 let confirmAction = MDCAlertAction(title: "Confirmar") { (action) in
-                    self.presenter?.updateFavorite(position: position, value: false)
-                    self.presenter?.removeFavorite(id: shows?[position].id)
+                    self.presenter?.removeFavorite(id: shows?[position].id, position: position)
                     tableView.reloadData()
                 }
                 alertController.addAction(confirmAction)
@@ -146,8 +156,7 @@ extension HomeViewController : UITableViewDataSource {
             generalAction?.backgroundColor = .red
         } else {
             generalAction = UIContextualAction(style: .normal, title: "Favorite") { (action, view, completionHandler) in
-                self.presenter?.updateFavorite(position: position, value: true)
-                self.presenter?.addFavorite(favorite: shows?[position])
+                self.presenter?.addFavorite(favorite: shows?[position], id: position)
                 completionHandler(true)
                 
             }
@@ -166,7 +175,7 @@ extension HomeViewController : UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let shows = presenter?.shows
+        let shows = isFavoriteActive ? presenter?.favoriteShows : presenter?.shows
         var selectedItem = shows?[indexPath.row]
         tableView.deselectRow(at: indexPath, animated: false)
         

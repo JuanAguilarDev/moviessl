@@ -39,6 +39,8 @@ protocol SignupPresenterProtocol: AnyObject  {
 
 protocol SignupInteractorOutputProtocol: AnyObject {
     //INTERACTOR -> PRESENTER
+    
+    func goToHomeView(model: LoginModel?)
 }
 
 protocol SignupInteractorInputProtocol: AnyObject {

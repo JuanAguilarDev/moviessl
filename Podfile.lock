@@ -648,6 +648,9 @@ PODS:
     - MotionInterchange (~> 3.0)
   - MotionInterchange (3.0.0)
   - ObjectMapper (4.2.0)
+  - SQLite.swift (0.12.2):
+    - SQLite.swift/standard (= 0.12.2)
+  - SQLite.swift/standard (0.12.2)
 
 DEPENDENCIES:
   - Alamofire (~> 5.0)
@@ -655,6 +658,7 @@ DEPENDENCIES:
   - KVNProgress
   - MaterialComponents
   - ObjectMapper (~> 4.2)
+  - SQLite.swift (~> 0.12.0)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -667,6 +671,7 @@ SPEC REPOS:
     - MotionAnimator
     - MotionInterchange
     - ObjectMapper
+    - SQLite.swift
 
 SPEC CHECKSUMS:
   Alamofire: f36a35757af4587d8e4f4bfa223ad10be2422b8c
@@ -678,7 +683,8 @@ SPEC CHECKSUMS:
   MotionAnimator: 5f99d7c9592928c0f28a66283eda9c3b657dc480
   MotionInterchange: 13adae439b377e31d1674cc165539d50e1d1566a
   ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
+  SQLite.swift: d2b4642190917051ce6bd1d49aab565fe794eea3
 
-PODFILE CHECKSUM: 9c1a495f4afba15333bdb16d777d01e48f34fb3e
+PODFILE CHECKSUM: 96292a840d210bb3c231df5971d4ebdfb5703370
 
 COCOAPODS: 1.15.2

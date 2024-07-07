@@ -8,12 +8,12 @@
 
 import Foundation
 import UIKit
+import MaterialComponents
 
 class HomeViewController: BaseViewController {
     
     // MARK: Properties
     var presenter: HomePresenterProtocol?
-    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var footerView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var tvLabelSection: UILabel!
@@ -21,6 +21,8 @@ class HomeViewController: BaseViewController {
     @IBOutlet weak var favoritesLabelSection: UILabel!
     @IBOutlet weak var favoritesImageSection: UIImageView!
     @IBOutlet weak var mainStack: UIStackView!
+    
+    var isFavoriteActive: Bool = false
     
     // MARK: Lifecycle
     
@@ -49,11 +51,15 @@ class HomeViewController: BaseViewController {
     @IBAction func onTvSectionAction(_ sender: Any) {
         setActiveStatusSection(label: tvLabelSection, image: tvImageSection, isActive: true)
         setActiveStatusSection(label: favoritesLabelSection, image: favoritesImageSection, isActive: false)
+        isFavoriteActive = false
+        tableView.reloadData()
     }
     
     @IBAction func onFavoritesSectionAction(_ sender: Any) {
         setActiveStatusSection(label: tvLabelSection, image: tvImageSection, isActive: false)
         setActiveStatusSection(label: favoritesLabelSection, image: favoritesImageSection, isActive: true)
+        isFavoriteActive = true
+        tableView.reloadData()
     }
     
 }
@@ -88,12 +94,15 @@ extension HomeViewController : HomeViewProtocol{
 
 extension HomeViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter?.shows?.count ?? 0
+        
+        let number = isFavoriteActive ? presenter?.favoriteShows?.count : presenter?.shows?.count
+        
+        return number ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let nameCell = "ShowTableViewCell"
-        let shows = presenter?.shows
+        let shows = isFavoriteActive ? presenter?.favoriteShows : presenter?.shows
         let position = indexPath.row
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: nameCell, for: indexPath) as? ShowTableViewCell else {
@@ -105,30 +114,47 @@ extension HomeViewController : UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let shows = presenter?.shows
+        let shows = isFavoriteActive ? presenter?.favoriteShows : presenter?.shows
         let position = indexPath.row
         let generalAction: UIContextualAction?
         
         if shows?[position].isFavorite ?? false {
             generalAction = UIContextualAction(style: .normal, title: "Delete") { (action, view, completionHandler) in
-                // Perform delete action
-                self.presenter?.updateFavorite(position: position, value: false)
-                print("Delete Action Tapped")
+                
+                let alertController = MDCAlertController(title: "Eliminar favoritos", message: Utils.shared.confirmation)
+                
+                
+                let confirmAction = MDCAlertAction(title: "Confirmar") { (action) in
+                    self.presenter?.updateFavorite(position: position, value: false)
+                    self.presenter?.removeFavorite(id: shows?[position].id)
+                    tableView.reloadData()
+                }
+                alertController.addAction(confirmAction)
+                
+                
+                let cancelAction = MDCAlertAction(title: "Cancelar", emphasis: .low) { (action) in
+                }
+                
+                alertController.addAction(cancelAction)
+                
+                self.present(alertController, animated: true, completion: nil)
+                
+                
                 completionHandler(true)
             }
             
             generalAction?.backgroundColor = .red
         } else {
             generalAction = UIContextualAction(style: .normal, title: "Favorite") { (action, view, completionHandler) in
-               // Perform delete action
                 self.presenter?.updateFavorite(position: position, value: true)
-               print("Delete Action Tapped")
-               completionHandler(true)
-           }
+                self.presenter?.addFavorite(favorite: shows?[position])
+                completionHandler(true)
+                
+            }
             
             generalAction?.backgroundColor = .green
         }
-
+        
         return UISwipeActionsConfiguration(actions: [generalAction!])
     }
     
@@ -138,12 +164,17 @@ extension HomeViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 74.0
     }
-}
-
-
-extension HomeViewController: UICollectionViewDelegateFlowLayout {
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width - 40, height: 50)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let shows = presenter?.shows
+        var selectedItem = shows?[indexPath.row]
+        tableView.deselectRow(at: indexPath, animated: false)
+        
+        if let selectedItem = shows?[indexPath.row] {
+            self.presenter?.goToDetailView(show: selectedItem)
+        } else {
+            self.presenter?.goToDetailView(show: nil)
+        }
+        
     }
 }

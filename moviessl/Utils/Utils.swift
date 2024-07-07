@@ -16,16 +16,16 @@ class Utils {
     
     // Colors
     let mainColor = "7A3FFE"
-    let onGoingColor = "FEC347"
-    let toDoColor = "53C2C5"
-    let completedColor = "4A934A"
-    let supportColor = "0275d8"
     
     // Messages
     let loginError: String = "Ooops, it seems that the user or password does not match."
     let signUpError: String = "Ooops, we are having problems, try again later."
     let fillBlanks: String = "Ooops, all fields should be filled in."
     let connectionError: String = "Ocurrió un error al consultar el servicio. ¿Quieres intentar nuevamente?"
+    let confirmation: String = "Are you sure you want to remove this catalog from your favorites?"
+    
+    // URLs
+    let imdbUrl: String = "https://www.imdb.com/title/"
     
     func newUser(model: LoginModel) {
         self.model = model
@@ -94,6 +94,10 @@ class BaseViewController: UIViewController {
         alertController.addAction(action)
         
         present(alertController, animated: true, completion: nil)
+    }
+    
+    func showConfirmationAlert(){
+        
     }
     
     func setNavigationControllerHidden(isHidden: Bool) {

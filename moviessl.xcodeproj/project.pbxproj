@@ -12,9 +12,16 @@
 		7027DAAB2C3A368100FBB534 /* ShowTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7027DAA92C3A368100FBB534 /* ShowTableViewCell.xib */; };
 		7027DAAE2C3A45B900FBB534 /* DownloadImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7027DAAD2C3A45B900FBB534 /* DownloadImages.swift */; };
 		7027DAB02C3A45F700FBB534 /* ImageSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7027DAAF2C3A45F700FBB534 /* ImageSource.swift */; };
+		7027DAB82C3A4CF900FBB534 /* DetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7027DAB22C3A4CF900FBB534 /* DetailsPresenter.swift */; };
+		7027DAB92C3A4CF900FBB534 /* DetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7027DAB32C3A4CF900FBB534 /* DetailsRouter.swift */; };
+		7027DABA2C3A4CF900FBB534 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7027DAB42C3A4CF900FBB534 /* DetailsViewController.swift */; };
+		7027DABB2C3A4CF900FBB534 /* DetailsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7027DAB52C3A4CF900FBB534 /* DetailsProtocols.swift */; };
+		7027DABC2C3A4CF900FBB534 /* DetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7027DAB62C3A4CF900FBB534 /* DetailsInteractor.swift */; };
+		7027DABD2C3A4CF900FBB534 /* DetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7027DAB72C3A4CF900FBB534 /* DetailsViewController.xib */; };
+		7027DAC02C3A658500FBB534 /* WebModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7027DABF2C3A658500FBB534 /* WebModal.swift */; };
+		7027DAC32C3A691000FBB534 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7027DAC22C3A691000FBB534 /* DataManager.swift */; };
 		706B45652C37BE8D00896E58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706B45642C37BE8D00896E58 /* AppDelegate.swift */; };
 		706B45672C37BE8D00896E58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706B45662C37BE8D00896E58 /* SceneDelegate.swift */; };
-		706B45692C37BE8D00896E58 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 706B45682C37BE8D00896E58 /* ViewController.swift */; };
 		706B456C2C37BE8D00896E58 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 706B456B2C37BE8D00896E58 /* Base */; };
 		706B456E2C37BE8E00896E58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 706B456D2C37BE8E00896E58 /* Assets.xcassets */; };
 		706B45712C37BE8E00896E58 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 706B45702C37BE8E00896E58 /* Base */; };
@@ -55,10 +62,17 @@
 		7027DAA92C3A368100FBB534 /* ShowTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowTableViewCell.xib; sourceTree = "<group>"; };
 		7027DAAD2C3A45B900FBB534 /* DownloadImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadImages.swift; sourceTree = "<group>"; };
 		7027DAAF2C3A45F700FBB534 /* ImageSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSource.swift; sourceTree = "<group>"; };
+		7027DAB22C3A4CF900FBB534 /* DetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPresenter.swift; sourceTree = "<group>"; };
+		7027DAB32C3A4CF900FBB534 /* DetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsRouter.swift; sourceTree = "<group>"; };
+		7027DAB42C3A4CF900FBB534 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		7027DAB52C3A4CF900FBB534 /* DetailsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsProtocols.swift; sourceTree = "<group>"; };
+		7027DAB62C3A4CF900FBB534 /* DetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsInteractor.swift; sourceTree = "<group>"; };
+		7027DAB72C3A4CF900FBB534 /* DetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsViewController.xib; sourceTree = "<group>"; };
+		7027DABF2C3A658500FBB534 /* WebModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebModal.swift; sourceTree = "<group>"; };
+		7027DAC22C3A691000FBB534 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		706B45612C37BE8D00896E58 /* moviessl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = moviessl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		706B45642C37BE8D00896E58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		706B45662C37BE8D00896E58 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		706B45682C37BE8D00896E58 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		706B456B2C37BE8D00896E58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LoginViewController.storyboard; sourceTree = "<group>"; };
 		706B456D2C37BE8E00896E58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		706B45702C37BE8E00896E58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -126,6 +140,35 @@
 			path = Download;
 			sourceTree = "<group>";
 		};
+		7027DAB12C3A4CE500FBB534 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				7027DAB22C3A4CF900FBB534 /* DetailsPresenter.swift */,
+				7027DAB32C3A4CF900FBB534 /* DetailsRouter.swift */,
+				7027DAB42C3A4CF900FBB534 /* DetailsViewController.swift */,
+				7027DAB52C3A4CF900FBB534 /* DetailsProtocols.swift */,
+				7027DAB62C3A4CF900FBB534 /* DetailsInteractor.swift */,
+				7027DAB72C3A4CF900FBB534 /* DetailsViewController.xib */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		7027DABE2C3A657700FBB534 /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				7027DABF2C3A658500FBB534 /* WebModal.swift */,
+			);
+			path = Modal;
+			sourceTree = "<group>";
+		};
+		7027DAC12C3A690500FBB534 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				7027DAC22C3A691000FBB534 /* DataManager.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		706B45582C37BE8D00896E58 = {
 			isa = PBXGroup;
 			children = (
@@ -149,7 +192,6 @@
 			children = (
 				706B45642C37BE8D00896E58 /* AppDelegate.swift */,
 				706B45662C37BE8D00896E58 /* SceneDelegate.swift */,
-				706B45682C37BE8D00896E58 /* ViewController.swift */,
 				706B45792C37C29000896E58 /* Utils */,
 				706B457A2C37C29800896E58 /* Modules */,
 				706B457B2C37C2A000896E58 /* WebServices */,
@@ -173,6 +215,7 @@
 		706B457A2C37C29800896E58 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				7027DAB12C3A4CE500FBB534 /* Details */,
 				706B45AA2C39166900896E58 /* Home */,
 				706B45992C38AEE700896E58 /* Signup */,
 				706B457E2C37C38E00896E58 /* Login */,
@@ -193,13 +236,13 @@
 		706B457E2C37C38E00896E58 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				706B45A82C38BAB100896E58 /* LoginEntity.swift */,
 				706B457F2C37C39B00896E58 /* LoginPresenter.swift */,
 				706B45802C37C39B00896E58 /* LoginRouter.swift */,
 				706B45812C37C39B00896E58 /* LoginViewController.swift */,
 				706B45822C37C39B00896E58 /* LoginProtocols.swift */,
 				706B45832C37C39B00896E58 /* LoginInteractor.swift */,
 				706B456A2C37BE8D00896E58 /* LoginViewController.storyboard */,
-				706B45A82C38BAB100896E58 /* LoginEntity.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -244,6 +287,8 @@
 		706B45B92C39C2DD00896E58 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				7027DAC12C3A690500FBB534 /* Data */,
+				7027DABE2C3A657700FBB534 /* Modal */,
 				7027DAAC2C3A45A500FBB534 /* Download */,
 				706B45BA2C39C2FE00896E58 /* Header */,
 			);
@@ -354,6 +399,7 @@
 				706B45BE2C39C31500896E58 /* HeaderView.xib in Resources */,
 				706B45A72C38AFA300896E58 /* SignupViewController.xib in Resources */,
 				706B456C2C37BE8D00896E58 /* Base in Resources */,
+				7027DABD2C3A4CF900FBB534 /* DetailsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,19 +459,25 @@
 				706B45A52C38AFA300896E58 /* SignupProtocols.swift in Sources */,
 				706B45A62C38AFA300896E58 /* SignupInteractor.swift in Sources */,
 				706B45982C37C73A00896E58 /* AsyncClientMoviesRequestModel.swift in Sources */,
-				706B45692C37BE8D00896E58 /* ViewController.swift in Sources */,
 				706B45912C37C50600896E58 /* AsyncClientRequest.swift in Sources */,
 				706B45962C37C58C00896E58 /* Utils.swift in Sources */,
 				706B45652C37BE8D00896E58 /* AppDelegate.swift in Sources */,
 				706B45A92C38BAB100896E58 /* LoginEntity.swift in Sources */,
 				706B45B12C39167700896E58 /* HomePresenter.swift in Sources */,
 				7027DAAA2C3A368100FBB534 /* ShowTableViewCell.swift in Sources */,
+				7027DAB82C3A4CF900FBB534 /* DetailsPresenter.swift in Sources */,
+				7027DAB92C3A4CF900FBB534 /* DetailsRouter.swift in Sources */,
+				7027DABA2C3A4CF900FBB534 /* DetailsViewController.swift in Sources */,
+				7027DABB2C3A4CF900FBB534 /* DetailsProtocols.swift in Sources */,
+				7027DABC2C3A4CF900FBB534 /* DetailsInteractor.swift in Sources */,
 				706B45B22C39167700896E58 /* HomeRouter.swift in Sources */,
 				706B45B32C39167700896E58 /* HomeViewController.swift in Sources */,
 				706B45B42C39167700896E58 /* HomeProtocols.swift in Sources */,
 				706B45B52C39167700896E58 /* HomeInteractor.swift in Sources */,
 				706B45672C37BE8D00896E58 /* SceneDelegate.swift in Sources */,
 				706B45C72C3A1A1900896E58 /* ShowViewCell.swift in Sources */,
+				7027DAC02C3A658500FBB534 /* WebModal.swift in Sources */,
+				7027DAC32C3A691000FBB534 /* DataManager.swift in Sources */,
 				706B45852C37C39B00896E58 /* LoginPresenter.swift in Sources */,
 				706B458F2C37C4C400896E58 /* MoviesServicesManagerProtocol.swift in Sources */,
 				706B45BC2C39C30D00896E58 /* HeaderView.swift in Sources */,

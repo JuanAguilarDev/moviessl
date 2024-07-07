@@ -31,7 +31,7 @@ extension HomeInteractor: HomeInteractorInputProtocol {
                     
                     let showImage = ImageSource.remoteImage(imageURL: show.image?.medium ?? "", fallbackImage: "photo")
                     
-                    let newShow = ShowModel(id: show.id, url: show.url, name: show.name, type: show.type, language: show.language, genres: show.genres, status: show.status, runtime: show.runtime, premiered: show.premiered, ended: show.ended, officialSite: show.officialSite, rating: show.rating?.average, image: showImage, summary: show.summary)
+                    let newShow = ShowModel(id: show.id, url: show.url, name: show.name, type: show.type, language: show.language, genres: show.genres, status: show.status, runtime: show.runtime, premiered: show.premiered, ended: show.ended, officialSite: show.officialSite, rating: show.rating?.average, image: showImage, summary: show.summary, externals: show.externals?.imdb)
                     model.append(newShow)
                 }
                 

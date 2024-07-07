@@ -14,6 +14,9 @@ class HeaderView: UIView {
     @IBOutlet var view: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet var headerView: UIView!
+    @IBOutlet weak var favoriteView: UIView!
+    @IBOutlet weak var favoriteLabel: UILabel!
+    @IBOutlet weak var favoriteImage: UIImageView!
     
     static var identifier: String {
         return String(describing: self)
@@ -43,6 +46,18 @@ class HeaderView: UIView {
     func setTitle(title: String?) {
         self.titleLabel.text = title ?? ""
         headerView.backgroundColor = UIColor(hex: Utils.shared.mainColor)
+        favoriteView.isHidden = true
+    }
+    
+    func setFavoriteView(isFavorite: Bool) {
+        if isFavorite {
+            favoriteImage.image = UIImage(named: "star.fill")
+            favoriteImage.tintColor = UIColor.yellow
+            favoriteLabel.text = "Delete"
+        } else {
+            favoriteImage.image = UIImage(named: "star")
+            favoriteLabel.text = "Favorite"
+        }
     }
     
 }

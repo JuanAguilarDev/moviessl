@@ -17,6 +17,7 @@ class HomePresenter {
     var router: HomeRouterProtocol?
     var interactor: HomeInteractorInputProtocol?
     var shows: [ShowModel]?
+    var favoriteShows: [ShowModel]? = []
 }
 
 extension HomePresenter: HomePresenterProtocol {
@@ -38,6 +39,32 @@ extension HomePresenter: HomePresenterProtocol {
         }
         
         shows?[position].isFavorite = value ?? false
+    }
+    
+    func goToDetailView(show: ShowModel?) {
+        if let show = show {
+            router?.goToDetailView(fromView: self.view, model: show)
+        } else {
+            return
+        }
+    }
+    
+    func addFavorite(favorite: ShowModel?){
+        guard let favorite = favorite else {
+            return
+        }
+        
+        self.favoriteShows?.append(favorite)
+    }
+    
+    func removeFavorite(id: Int?) {
+        guard let id = id else {
+            return
+        }
+        
+        self.favoriteShows?.removeAll {
+            $0.id == id
+        }
     }
 }
 

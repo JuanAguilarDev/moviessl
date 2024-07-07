@@ -22,6 +22,8 @@ protocol HomeRouterProtocol: AnyObject  {
     // PRESENTER -> ROUTER
     
     static func createHomeModule() -> HomeViewController
+    
+    func goToDetailView(fromView: BaseViewController?, model: ShowModel) 
 }
 
 protocol HomePresenterProtocol: AnyObject  {
@@ -31,10 +33,14 @@ protocol HomePresenterProtocol: AnyObject  {
     var interactor: HomeInteractorInputProtocol? { get set }
     var router: HomeRouterProtocol? { get set }
     var shows: [ShowModel]? { get set }
+    var favoriteShows: [ShowModel]? { get set }
     
     func viewDidLoad()
     func viewWillAppear()
     func updateFavorite(position: Int?, value: Bool?)
+    func addFavorite(favorite: ShowModel?)
+    func removeFavorite(id: Int?)
+    func goToDetailView(show: ShowModel?)
 }
 
 protocol HomeInteractorOutputProtocol: AnyObject {

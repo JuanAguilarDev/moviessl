@@ -24,10 +24,8 @@ class ShowTableViewCell: UITableViewCell {
     }
     
     func initView(title: String?, image: ImageSource?){
-        self.showTitle.text = title
-        
         let imageAppereance = UIImageView.Appeareance(imageSource: image)
-        
+        self.showTitle.text = title
         self.showImage.setup(appearance: imageAppereance)
     }
 

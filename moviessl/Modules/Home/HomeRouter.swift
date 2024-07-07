@@ -40,4 +40,11 @@ class HomeRouter {
 
 extension HomeRouter: HomeRouterProtocol {
     // TODO: Implement wireframe methods
+    
+    func goToDetailView(fromView: BaseViewController?, model: ShowModel) {
+        if let view = fromView {
+            let detailView = DetailsRouter.createDetailsModule(model: model)
+            view.navigationController?.pushViewController(detailView, animated: true)
+        }
+    }
 }

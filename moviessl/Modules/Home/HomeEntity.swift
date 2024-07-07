@@ -23,6 +23,7 @@ class Show: Mappable {
     var rating: Rate?
     var image: ShowImage?
     var summary: String?
+    var externals: External?
     
     required init?(map: Map) {}
     
@@ -41,6 +42,7 @@ class Show: Mappable {
         rating <- map["rating"]
         image <- map["image"]
         summary <- map["summary"]
+        externals <- map["externals"]
     }
 }
 
@@ -51,6 +53,16 @@ class Rate: Mappable {
     
     func mapping(map: Map) {
         average <- map["average"]
+    }
+}
+
+class External: Mappable {
+    var imdb: String?
+    
+    required init?(map: Map){ }
+    
+    func mapping(map: Map) {
+        imdb <- map["imdb"]
     }
 }
 
@@ -70,6 +82,7 @@ class ShowImage: Mappable {
 
 class ShowModel {
     var id: Int?
+    var userId: String?
     var url: String?
     var name: String?
     var type: String?
@@ -84,8 +97,9 @@ class ShowModel {
     var image: ImageSource?
     var summary: String?
     var isFavorite: Bool?
+    var externals: String?
    
-    init(id: Int? = nil, url: String? = nil, name: String? = nil, type: String? = nil, language: String? = nil, genres: [String]? = nil, status: String? = nil, runtime: Int? = nil, premiered: String? = nil, ended: String? = nil, officialSite: String? = nil, rating: Int? = nil, image: ImageSource? = nil, summary: String? = nil) {
+    init(id: Int? = nil, url: String? = nil, name: String? = nil, type: String? = nil, language: String? = nil, genres: [String]? = nil, status: String? = nil, runtime: Int? = nil, premiered: String? = nil, ended: String? = nil, officialSite: String? = nil, rating: Int? = nil, image: ImageSource? = nil, summary: String? = nil, externals: String? = nil) {
         self.id = id
         self.url = url
         self.name = name
@@ -100,5 +114,6 @@ class ShowModel {
         self.rating = rating
         self.image = image
         self.summary = summary
+        self.externals = externals
     }
 }

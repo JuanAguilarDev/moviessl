@@ -14,6 +14,7 @@ target 'moviessl' do
   pod 'ObjectMapper', '~> 4.2'
   pod 'KVNProgress'
   pod 'MaterialComponents'
+  pod 'SQLite.swift', '~> 0.12.0'
 
 end
 
